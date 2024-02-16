@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import japanize_matplotlib
 
-
+# 課題１
 
 def medical_subject():
     d = {}
