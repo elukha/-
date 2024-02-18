@@ -32,9 +32,9 @@ def ranking(population, calendar):
     datalist = []
     for i in range(len(population)):
         d[population[i]] = calendar[i]
-    population.sort()
-    for n in range(1, 6):
-        datalist.append(str(n) + "位: " + str(calendar[n]) + "年" + "\n")
+    s = sorted(d.items(), reverse=True)
+    for n in range(0, 5):
+        datalist.append(str(n+1) + "位: " + str(s[n][1]) + "年" + "\n")
 
     return datalist
 
@@ -50,6 +50,6 @@ write_text(datalist)
 
 
 # 折れ線グラフ出力
-plt.plot(population, calendar)
+plt.plot(calendar, population)
 plt.savefig("data.png")
 plt.show()
